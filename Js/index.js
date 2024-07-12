@@ -15,19 +15,21 @@ valueDisplays.forEach((valueDisplay) => {
     }, duration);
 });
 
-let valueDisplaysnum2 = document.querySelectorAll(".num2");
-let intervalnum2 = 5000;
+let valueDisplays2 = document.querySelectorAll(".num2");
+let interval2 = 5000;
 
-valueDisplaysnum2.forEach((valueDisplaynum2) => {
+valueDisplays2.forEach((valueDisplay2) => {
     let startValue = 0;
-    let endValue = parseInt(valueDisplaynum2.getAttribute
-        ("data-val2"));
-    let duration = Math.floor(intervalnum2 / endValue);
+    let endValue = parseInt(valueDisplay2.getAttribute("data-num"));
+    let duration = Math.floor(interval2 / endValue);
     let counter = setInterval(function () {
         startValue += 4000;
-        valueDisplaynum2.textContent = startValue;
+        let formattedValue = startValue.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
+        valueDisplay2.textContent = formattedValue;
         if (startValue == endValue) {
             clearInterval(counter);
         }
     }, duration);
 });
+
+

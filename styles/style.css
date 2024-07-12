@@ -4,6 +4,12 @@
     0%{transform:scale(1);}
     100%{transform:scale(1.2);}
 }
+@keyframes button-anim {
+    0% {background-color: #c07212}
+    50% {background-color:#ff5e00;}
+    75% {background-color: #e87204;}
+    100% {background-color: #f38b2a;}
+}
 * {
     margin: 0;
     padding: 0;
@@ -125,10 +131,11 @@ button {
     color: #FFFFFF;
     border: none;
     margin-top: 70px; 
+    animation: 5s infinite button-anim;
 }
 button:hover {
     cursor: pointer;
-    background: linear-gradient(to right, #c0721280, #ff8c00);
+    background-color: #c07212;
     transform: translateY(-20px);
-    transition: 1s ease;
+    transition: 1s;
 }
